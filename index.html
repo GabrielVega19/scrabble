@@ -1,0 +1,81 @@
+<!-- GUI Assignment: HW5
+Gabriel Vega, UMass Lowell Computer Science, gabriel_vega@student.uml.edu  -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Online Scrabble</title>
+
+    <!-- imports css -->
+    <link rel="stylesheet" href="assets/css/output.css">
+    <!-- imports jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <!-- imports jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- the container for the whole screen sets the size to screen width and height and makes sure everything stays inside -->
+    <div id="board" class="w-screen h-screen bg-wood bg-cover bg-center flex flex-col items-center justify-between">
+        <!-- div 1 of the 3 main divs that holds all the information for the scoreboard -->
+        <div class="w-[30rem] h-24 mt-10 grid grid-cols-3 grid-rows-2 bg-[#f3e7d3] shadow-custom rounded-lg border-[1px] border-black px-3 py-1 items-center">
+            <p class="text-center text-3xl col-span-3 ">Scrabble</p>
+            <!-- this text displays the current score and gets set by the jquery -->
+            <p id="score" class="text-center text-xl justify-self-start">Score: 0</p>
+            <!-- this text displays the current word and gets set by the jquery -->
+            <p id="word" class="text-center text-xl justify-self-center">Word: -</p>
+            <!-- this text displays the number of tiles left and gets set by the jquery -->
+            <p id="tilesLeft" class="text-center text-xl justify-self-end">Tiles left: 93</p>
+        </div>
+        <!-- div 2 of the 3 main divs that holds the single line for scrabble and the error messages-->
+        <div id="slots" class="w-[730px] h-24">
+            <!-- this div holds all the individual scrabble slots that tiles can be dragged into they are of type sortable -->
+            <div class="flex justify-around">
+                <div id="slot1" class="connectSortable w-24 h-24 border-black border-[1px] flex justify-around items-center bg-[#f3e7d3] shadow-slot rounded-lg">
+                    
+                </div>
+                <div id="slot2" class="connectSortable w-24 h-24 border-black border-[1px] flex justify-around items-center shadow-slot rounded-lg bg-double bg-cover bg-center">
+                    
+                </div>
+                <div id="slot3" class="connectSortable w-24 h-24 border-black border-[1px] flex justify-around items-center bg-[#f3e7d3] shadow-slot rounded-lg">
+                    
+                </div>
+                <div id="slot4" class="connectSortable w-24 h-24 border-black border-[1px] flex justify-around items-center bg-[#f3e7d3] shadow-slot rounded-lg">
+                    
+                </div>
+                <div id="slot5" class="connectSortable w-24 h-24 border-black border-[1px] flex justify-around items-center bg-[#f3e7d3] shadow-slot rounded-lg">
+                    
+                </div>
+                <div id="slot6" class="connectSortable w-24 h-24 border-black border-[1px] flex justify-around items-center shadow-slot rounded-lg bg-double bg-cover bg-center">
+                    
+                </div>
+                <div id="slot7" class="connectSortable w-24 h-24 border-black border-[1px] flex justify-around items-center bg-[#f3e7d3] shadow-slot rounded-lg">
+                    
+                </div>
+            </div>
+            <!-- this is holds the text for the error messages it gets hidden and altered as determined by the jquery -->
+            <p id="error" class="hidden rounded-lg shadow-custom border-black border-[1px] bg-[#f3e7d3] mt-10 w-1/2 mx-auto p-5 text-red-600 text-xl text-center">This is a test</p>
+        </div>
+       <!-- div 3 of the 3 main divs that holds the rack for the scrabble tiles and all the buttons needed for the game -->
+        <div class="flex items-center">
+            <!-- this div is the rack that holds all the letter tiles, it is of type sortable so you can change around the order of the letters -->
+            <div id="rack" class="rounded-lg shadow-custom border-black border-[1px] bg-[#f3e7d3] w-[730px] h-24 mb-10 connectSortable flex justify-around items-center">
+                
+            </div>
+
+            <!-- the two buttons on the bottom of the page that resets and submits the word thier behavior gets handled by the jquery -->
+            <div id="submit" class="rounded-lg shadow-custom border-black border-[1px] bg-[#f3e7d3] w-32 h-14 mb-10 flex justify-center items-center text-center ml-10 cursor-pointer">
+                <p class="text-lg font-medium">Submit Word</p>
+            </div>
+            <div id="restart" class="rounded-lg shadow-custom border-black border-[1px] bg-[#f3e7d3] w-32 h-14 mb-10 flex justify-center items-center text-center ml-10 cursor-pointer">
+                <p class="text-lg font-medium">Restart Game</p>
+            </div>
+        </div>       
+    </div>
+    
+
+    <!-- imports javascript -->
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
